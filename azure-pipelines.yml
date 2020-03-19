@@ -33,3 +33,11 @@ steps:
     repository: 'elleonor/maven-hello-world'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+- task: Docker@0
+  inputs:
+    containerregistrytype: 'Container Registry'
+    dockerRegistryConnection: '/docker Hub'
+    action: 'Run an image'
+    imageName: 'elleonor/maven-hello-world:$(Build.BuildId)'
+    containerName: 'elleonor'
+    restartPolicy: 'no'
