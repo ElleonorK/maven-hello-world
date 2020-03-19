@@ -33,6 +33,9 @@ steps:
     repository: 'elleonor/maven-hello-world'
     command: 'buildAndPush'
     Dockerfile: '**/Dockerfile'
+    tags: |
+      $(Build.BuildId)
+      latest
 - task: Docker@0
   inputs:
     containerregistrytype: 'Container Registry'
