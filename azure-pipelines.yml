@@ -40,4 +40,4 @@ steps:
     action: 'Run an image'
     imageName: 'elleonor/maven-hello-world:$(Build.BuildId)'
     containerName: 'elleonor'
-    restartPolicy: 'no'
+    detached: false
